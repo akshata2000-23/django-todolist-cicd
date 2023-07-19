@@ -20,4 +20,5 @@ dist
 results
 logs
 *.logs
-venv
+env
+mykey.pem
