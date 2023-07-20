@@ -34,3 +34,27 @@ or start on the [landing page](http://localhost:8000/)
 
 [travis-url]: https://travis-ci.org/rtzll/django-todolist
 [travis-image]: https://travis-ci.org/rtzll/django-todolist.svg?branch=master
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+**Now lets dockerize the application:**
+Step 1: Create a docker image
+
+        docker build -t image_name:tag_name .
+This creates a docker image. Verify the image by entering: docker images
+
+Step 2: Run the container using the image created.
+
+        docker run -d -p 8000:8000 --name container_name image_name:tag_name
+
+This creates and starts the container. If you are running this in an EC2 then go to security groups and enable port 8000 in inbound rules.
+Also add the IP address of EC2 in todolist/settings.py ALLOWED_HOST=['http://ip_addr']
+
+Verify the site by entering the HTTP://ip_addr:8000
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+**Now lets create a CI CD Pipeline which fetched the code from git repo and builds and runs the image in a container automatically**
+
+
