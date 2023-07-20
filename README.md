@@ -57,4 +57,25 @@ Verify the site by entering the HTTP://ip_addr:8000
 
 **Now lets create a CI CD Pipeline which fetched the code from git repo and builds and runs the image in a container automatically**
 
+**Installation of Jenkins on VM**
+
+Run the command:
+
+        docker pull jenkins/jenkins
+
+We are installing jenkins through docker. Next step is running the container
+
+        docker run -d -p 8080:8080 jenkins/jenkins 
+This will create a container of Jenkins. So now check the url of the VM : HTTP://ip_addr:8080. Allow access to port 8080 in inbound rules section.
+You will see Jenkins page, you will have to enter the password, to find the password enter the following command:
+
+        docker logs container_id ## do docker ps to find container_id
+
+After entering password you will see following page:
+![image](https://github.com/akshata2000-23/django-todolist-cicd/assets/70626299/b81a9291-fa51-4d7f-96af-d08f096fd298)
+
+
+
+
+
 
